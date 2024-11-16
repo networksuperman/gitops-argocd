@@ -1,0 +1,23 @@
+apiVersion:  apps/v1
+kind: Deployment
+metadata:
+  name: devopslifeapp-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devopslifeapp-app
+  template:
+    metadata:
+      labels:
+        app: devopslifeapp-app
+    spec:
+      containers:
+        - name: devopslifeapp-app
+          image: networkdockering/devopslifeapp:1.0.0-23
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
