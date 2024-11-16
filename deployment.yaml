@@ -1,23 +1,20 @@
-apiVersion:  apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devopslifeapp-deployment
+  name: nginx
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: devopslifeapp-app
+      run: nginx
   template:
     metadata:
       labels:
-        app: devopslifeapp-app
+        run: nginx
     spec:
       containers:
-        - name: devopslifeapp-app
-          image: networkdockering/diploma:35
-          resources:
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 80
+      - name: nginx
+        image: nginx
+        ports:
+          - containerPort: 80
+        imagePullPolicy: IfNotPresent
