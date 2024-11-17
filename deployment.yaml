@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devopslife-app
-        image: nginx
+        image: networkdockering/devopslifeapp:latest
         ports:
           - containerPort: 80
         imagePullPolicy: IfNotPresent
