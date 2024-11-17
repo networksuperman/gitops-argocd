@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: devopslife-app
-        image: networkdockering/devopslifeapp:1.0.0-31
+        image: networkdockering/devopslifeapp:1.0.0-32
         ports:
           - containerPort: 80
         imagePullPolicy: IfNotPresent
